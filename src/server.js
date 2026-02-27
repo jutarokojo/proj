@@ -4,10 +4,11 @@ const app = express();
 const PORT = 3000;
 
 app.use(express.json());
+app.use(express.static(__dirname+"/public"));
 
-app.get("/", (req, res) => {
-  res.json({ message: "API is running" });
-});
+//app.get("/", (req, res) => {
+//  res.sendFile(__dirname+"/public/index.html");
+//});
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
